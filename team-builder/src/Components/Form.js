@@ -11,6 +11,7 @@ const Form = (props)=>{
         <form className="formDiv">
             <label>
                 Name: 
+                &nbsp;
                 <input 
                 type='text'
                 name='name'
@@ -22,6 +23,7 @@ const Form = (props)=>{
             <br/>
             <label>
                 Email: 
+                &nbsp;
                 <input 
                 type='text'
                 name='email'
@@ -32,7 +34,8 @@ const Form = (props)=>{
             </label>
             <br/>
             <label>
-                Role:  
+                Role:
+                &nbsp;  
                 <input 
                 type='text'
                 name='role'

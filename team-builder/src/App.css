@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 2px;
   display: flex;
   flex-direction: column; 
-  /* justify-content: space-between; */
-  background: white;
+  justify-content: center;
+  background: rgb(177, 118, 118);
   border: 2px dashed rgba(54, 51, 51, 0.582);
+  min-height: 100vh;
+  border-radius: 10px;
 
 }
 
@@ -35,8 +39,22 @@ body {
 .card {
   border: 1px solid black;
   width: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+  margin: 30px;
+  background: white;
+  border-radius: 10px;
 }
 
 .formDiv {
   width: 30%;
+  margin: 30px;
+  background: white;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+}
+
+input {
+  border-radius: 4px;
 }
