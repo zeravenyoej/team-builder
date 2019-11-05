@@ -1,31 +1,44 @@
 import React, { useState } from 'react';
 
-const Form = ()=>{
+const Form = (props)=>{
+
+    const addNewMember = (event) => {
+        const handleChange = props.handleChange;
+        handleChange(event)
+    }
 
     return (
-        <form>
+        <form className="formDiv">
             <label>
                 Name: 
                 <input 
                 type='text'
-                value=''
+                name='name'
+                value={props.teamMembers.name}
                 placeholder='name'
+                onChange={event=>addNewMember(event)}
                 />
             </label>
+            <br/>
             <label>
                 Email: 
                 <input 
                 type='text'
-                value=''
+                name='email'
+                value={props.teamMembers.email}
                 placeholder='email'
+                onChange={event=>addNewMember(event)}
                 />
             </label>
+            <br/>
             <label>
                 Role:  
                 <input 
                 type='text'
-                value=''
+                name='role'
+                value={props.teamMembers.role}
                 placeholder='role'
+                onChange={event=>addNewMember(event)}
                 />
             </label>
         </form>

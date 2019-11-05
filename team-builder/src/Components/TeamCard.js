@@ -3,7 +3,7 @@ import React from 'react';
 const TeamCard=(props)=>{
     return(
         props.teamMembers.map((mem, index)=> 
-            <div>
+            <div className='card'>
                 <h1>{mem.name}</h1>
                 <h2>{mem.email}</h2>
                 <h3>{mem.role}</h3>
