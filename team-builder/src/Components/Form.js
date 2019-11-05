@@ -2,22 +2,31 @@ import React, { useState } from 'react';
 
 const Form = (props)=>{
 
-    const addNewMember = (event) => {
-        const handleChange = props.handleChange;
-        handleChange(event)
-    }
+    const [formValues, setFormValues]=useState({name: '', email: '', role: ''});
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setFormValues({...formValues, [name]: value});
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(formValues);
+    };
 
     return (
-        <form className="formDiv">
+        <form className="formDiv" onSubmit={handleSubmit}>
             <label>
                 Name: 
                 &nbsp;
                 <input 
                 type='text'
                 name='name'
-                value={props.teamMembers.name}
+                value={formValues.name}
                 placeholder='name'
-                onChange={event=>addNewMember(event)}
+                required
+                onChange={handleChange}
                 />
             </label>
             <br/>
@@ -27,9 +36,10 @@ const Form = (props)=>{
                 <input 
                 type='text'
                 name='email'
-                value={props.teamMembers.email}
+                value={formValues.email}
                 placeholder='email'
-                onChange={event=>addNewMember(event)}
+                required
+                onChange={handleChange}
                 />
             </label>
             <br/>
@@ -39,11 +49,14 @@ const Form = (props)=>{
                 <input 
                 type='text'
                 name='role'
-                value={props.teamMembers.role}
+                value={formValues.role}
                 placeholder='role'
-                onChange={event=>addNewMember(event)}
+                required
+                onChange={handleChange}
                 />
             </label>
+            <br/>
+            <button>Submit</button>
         </form>
     );
 };

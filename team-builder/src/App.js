@@ -12,7 +12,7 @@ function App() {
   console.log(teamMembers);
 
   const handleChange = event => {
-    setTeamMembers({...teamMembers, [event.target.name]: event.target.value})
+    setTeamMembers([{...teamMembers, [event.target.name]: event.target.value}])
   };
 
   return (
