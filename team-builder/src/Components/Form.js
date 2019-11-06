@@ -5,14 +5,15 @@ const Form = (props)=>{
     const [formValues, setFormValues]=useState({name: '', email: '', role: ''});
 
     const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setFormValues({...formValues, [name]: value});
+        setFormValues({...formValues, [event.target.name]: event.target.value});
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formValues);
+        //console.log(formValues);
+        const newFormValues = {...formValues};
+        props.addNewCard(newFormValues);
+        setFormValues({name: '', email: '', role: ''});
     };
 
     return (
